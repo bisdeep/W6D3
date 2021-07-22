@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(params.require(:user).permit(:username))
+        @user = User.new(user_params)
         if @user.save
           render json: @user
         else
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        @user = User.find(params[:id])#we can only destroy if we already have it
+        @user = User.find(params[:id]) #we can only destroy if we already have it
         @user.destroy
         redirect_to users_url
     end
