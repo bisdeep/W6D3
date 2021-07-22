@@ -8,4 +8,4 @@
 User.destroy_all
 # user1 = User.create!(name: "Deep", email: "deep@thedeepone.com")
 # user2 = User.create!(name: "Dustin", email: "dustin@mastersoftheuniverse.com")
-users = User.create([{name: 'Deep', email: 'deep@thedeepone.com'}, {name: 'Dustin', email: 'dustin@mastersoftheuniverse.com'}])
+users = User.create([{username:'deep@thedeepone.com'}, {username: 'dustin@mastersoftheuniverse.com'}])
