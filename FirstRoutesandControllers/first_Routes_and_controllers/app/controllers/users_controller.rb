@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    #artshare phase 1: remove :email refs, rename :name into :username
     
     def index
         @users = User.all #fetch all users

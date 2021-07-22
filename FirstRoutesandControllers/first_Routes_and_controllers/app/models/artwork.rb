@@ -13,4 +13,12 @@ class Artwork < ApplicationRecord
     has_many :shared_viewers, 
         through: :shares, 
         source: :viewer
+
+    def self.findart(user_id)
+        #Artwork.joins(:shares).joins(:artist).where("viewer_id = (?)", user_id); ATTEMPT 1
+
+        #variable = user_id
+        Artwork.joins(:shares).where("viewer_id = (?)", user_id)
+        .or(Artwork.joins(:artist).where("artist_id = (?)", user_id));
+    end
 end
